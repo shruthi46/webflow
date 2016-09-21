@@ -10,8 +10,8 @@
 <style>
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
-      width: 90%;
-	  height: 450px;
+      width:100%;
+	  height: 400px;
       
   }
   
@@ -21,7 +21,7 @@
 <body bgcolor='white'>
 
 <div class="text-center">
-  <h1>SHOPIN 
+  <h1>SHOPNATURAL
   <img  src="file:///C:/Users/Shruthi/Desktop/myhtml/fbk.jpg" alt="Flower" width="30px" height="30px" align="right" >
   <img  src="file:///C:/Users/Shruthi/Desktop/myhtml/twitter.png" alt="Flower" width="30px" height="30px" align="right" >
   </h1>
@@ -35,7 +35,6 @@
 	<form class="navbar-form navbar-left" role="search">
   <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">
-            <button type="submit" class="btn btn-default">submit</button>
 			</div>
 </form>
     </div>
@@ -54,7 +53,7 @@
  
  <div class="container-fluid">
   <br>
-  <div id="myCarousel" class="carousel slide"  style="margin:5px " ;data-ride="carousel">
+  <div id="myCarousel" class="carousel slide"  style="margin:10px " ;data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -66,11 +65,11 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="file:///C:/Users/Shruthi/Desktop/myhtml/mb.jpg" height=100 widith=100 alt="Chania"  >
+        <img src="file:///C:/Users/Shruthi/Desktop/myhtml/pic.jpg" height=800 width=1200 alt="Chania"  >
       </div>
 
       <div class="item">
-        <img  src="file:///C:/Users/Shruthi/Desktop/myhtml/mb1.jpg" height=30px width=20px alt="flower">
+        <img  src="file:///C:/Users/Shruthi/Desktop/myhtml/pic1.jpg" height=30px width=20px alt="flower">
       </div>
     
       <div class="item">
