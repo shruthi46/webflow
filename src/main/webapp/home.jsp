@@ -11,7 +11,7 @@
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
       width:100%;
-	  height: 400px;
+	  height: 350px;
       
   }
   
@@ -32,7 +32,7 @@
  <nav class="navbar navbar" style="margin-bottom:0px";>
    
   <div class="navbar-header">
-	<form class="navbar-form navbar-left" role="search">
+	<form class="navbar-form navbar-center" role="search">
   <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">
 			</div>
@@ -65,19 +65,19 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="file:///C:/Users/Shruthi/Desktop/myhtml/pic.jpg" height=800 width=1200 alt="Chania"  >
+        <img src="file:///C:/Users/Shruthi/Desktop/myhtml/pic.jpg" height=350px width=700px alt="Chania"  >
       </div>
 
       <div class="item">
-        <img  src="file:///C:/Users/Shruthi/Desktop/myhtml/pic1.jpg" height=30px width=20px alt="flower">
+        <img  src="file:///C:/Users/Shruthi/Desktop/myhtml/pic1.jpg" height=350px width=700px alt="flower">
       </div>
     
       <div class="item">
-        <img  src="file:///C:/Users/Shruthi/Desktop/myhtml/mb2.jpg" height=300 width=200 alt="Flower" >
+        <img  src="file:///C:/Users/Shruthi/Desktop/myhtml/pic2.jpg" height=350px width=700px alt="Flower" >
       </div>
 
       <div class="item">
-        <img  src="file:///C:/Users/Shruthi/Desktop/myhtml/mb3.jpg" alt="Flower" >
+        <img  src="file:///C:/Users/Shruthi/Desktop/myhtml/pic2.jpg" height=350px width=700px alt="Flower" >
       </div>
     </div>
 
