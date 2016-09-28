@@ -11,6 +11,8 @@ public class UserDetails
 	private String address;
 	private String mobile;
 	private String role;
+
+	private byte admin;
 		
 		public String getId() {
 		return id;

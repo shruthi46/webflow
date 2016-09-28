@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Bootstrap Example</title>
@@ -52,4 +52,4 @@
   </div>
   </nav>
   </body>
-  </html>
+  </html> -->
