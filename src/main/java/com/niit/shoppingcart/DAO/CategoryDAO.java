@@ -7,9 +7,9 @@ import com.niit.shoppingcart.Model.Category;
 public interface CategoryDAO
 {
 	
-	public boolean saveorupdate(Category category);
-	public boolean delete(String id);
-	public Category get(String id);
+	public boolean saveOrUpdate(Category category);
+	public boolean delete(Category category);
+	public Category get(int id);
 	public List<Category> list();
 	
 	

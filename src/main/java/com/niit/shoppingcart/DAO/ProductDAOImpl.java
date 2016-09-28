@@ -1,75 +1,81 @@
 package com.niit.shoppingcart.DAO;
 
-import java.util.List;
 
-import javax.persistence.Query;
-
+/*import java.util.List;
+import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.shoppingcart.Model.Product;
 
 
-//@Repository("ProductDAO")
-public class ProductDAOImpl implements ProductDAO
-{
-	@Autowired
-	private Product product;
+@Repository
+public class ProductDAOImpl implements ProductDAO{
 	
 	@Autowired
-	private SessionFactory sessionfactory;
+	private SessionFactory sessionFactory;
 
-	public ProductDAOImpl(SessionFactory sessionfactory2) {
-		// TODO Auto-generated constructor stub
+
+	public ProductDAOImpl(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
 	}
 
-	public boolean saveorupdate(Product product) {
-		
-		try
-		{
-			sessionfactory.getCurrentSession().saveOrUpdate(product);
+	@Transactional
+	public boolean saveOrUpdate(Product product){
+		try {
+			sessionFactory.getCurrentSession().saveOrUpdate(product);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
 		}
-		catch(Exception e)
-		{
-		e.printStackTrace();
+	
+	} 
+
+	@Transactional
+	public boolean delete(Product product)
+	    {     
+		try {
+			sessionFactory.getCurrentSession().delete(product);
+			return true;
+		}
+		 catch (Exception e){
+			e.printStackTrace();
+		
 		return false;
 		}
-		return true;
-	}
-
-	public boolean delete(String id) {
-		
-		try
-		{
-			sessionfactory.getCurrentSession().delete(get(id));
 		}
-		catch(Exception e)
-		{
-		e.printStackTrace();
-		return false;
-		}
-		return true;
-	}
 
-	public Product get(String id) {
+	@Transactional
+	public Product get(int id) {
+		String hql = "from"+" Product"+" where id=" +id;
+		@SuppressWarnings("rawtypes")
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
-		String hql="from Product where id = '"+id+"'";
-		Query query=sessionfactory.getCurrentSession().createQuery(hql);
-				
-		List<Product> list = ((ProductDAOImpl) query).list();
+		@SuppressWarnings("unchecked")
+		List<Product> listProduct = (List<Product>) query.list();
 		
-		if(list == null || list.isEmpty())
-		{
-			return null;
+		if (listProduct != null && !listProduct.isEmpty()) {
+			return listProduct.get(0);
 		}
-		return list.get(0);
-	}
-
-	public List<Product> list() {
 		
 		return null;
 	}
-}
 	
+	@SuppressWarnings("deprecation")
 
+	@Transactional
+  public List<Product> list(){
+		@SuppressWarnings("unchecked")
+		List<Product> listProduct = (List<Product>)
+		sessionFactory.getCurrentSession()
+		.createCriteria(Product.class)
+		.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+		return listProduct;
+	}
 
+}
+*/	
