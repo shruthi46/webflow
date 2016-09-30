@@ -6,9 +6,9 @@ import com.niit.shoppingcart.Model.Supplier;
 
 public interface SupplierDAO
 {
-	public boolean saveorupdate(Supplier supplier);
-	 public boolean delete(String id);
-	 public Supplier get(String id);
+	public boolean saveOrUpdate(Supplier supplier);
+	 public boolean delete(Supplier supplier);
+	 public Supplier get(int id);
 	 public List<Supplier> list();
 
 

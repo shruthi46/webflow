@@ -1,7 +1,7 @@
 package com.niit.shoppingcart.DAO;
 
 
-/*import java.util.List;
+import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
@@ -10,10 +10,12 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.shoppingcart.Model.Product;
+import com.niit.shoppingcart.DAO.*;
 
 
-@Repository
-public class ProductDAOImpl implements ProductDAO{
+
+@Repository("productDAO")
+public  class ProductDAOImpl implements ProductDAO{
 	
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -68,14 +70,17 @@ public class ProductDAOImpl implements ProductDAO{
 	@SuppressWarnings("deprecation")
 
 	@Transactional
-  public List<Product> list(){
-		@SuppressWarnings("unchecked")
-		List<Product> listProduct = (List<Product>)
-		sessionFactory.getCurrentSession()
-		.createCriteria(Product.class)
-		.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-		return listProduct;
-	}
+	  public List<Product> list(){
+			@SuppressWarnings("unchecked")
+			List<Product> listProduct = (List<Product>)
+			sessionFactory.getCurrentSession()
+			.createCriteria(Product.class)
+			.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+			return listProduct;
+		}
+
+
+	
+	
 
 }
-*/	
