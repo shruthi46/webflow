@@ -14,20 +14,9 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.niit.shoppingcart.DAO.CategoryDAO;
-import com.niit.shoppingcart.DAO.CategoryDAOImpl;
-import com.niit.shoppingcart.DAO.ProductDAO;
-import com.niit.shoppingcart.DAO.ProductDAOImpl;
-import com.niit.shoppingcart.DAO.SupplierDAO;
-import com.niit.shoppingcart.DAO.SupplierDAOImpl;
-import com.niit.shoppingcart.Model.Category;
-import com.niit.shoppingcart.Model.Product;
-import com.niit.shoppingcart.Model.Supplier;
+import com.niit.shoppingcart.DAO.*;
 
-
-
-
-
+import com.niit.shoppingcart.Model.*;
 
 @Configuration
 @ComponentScan("com.niit.shoppingcart")

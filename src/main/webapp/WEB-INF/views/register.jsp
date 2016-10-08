@@ -1,54 +1,68 @@
-<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
+<style>
+ 
+ h1{
+    text-align: center;
+    }
+ h3{
+    text-align: center;
+    }
+    </style>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>registration</title>
-<%@ include file="header.jsp"%>
+<title> New User Registration</title>
 </head>
-<body bgcolor="white">
 
-<div class="container">
-  <h2>REGISTER:</h2>
-  <form role="form">
-    <div class="form-group">
-      <label for="usr">Name:</label>
-      <input type="text" style="width:50%" class="form-control" id="usr" placeholder="Enter name">
-    </div>
-       <div class="form-group">	
-      <label for="email">Email:</label>
-      <input type="email" style="width:50%" class="form-control" id="email" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" style="width:50%" class="form-control" id="pwd" placeholder="Enter password">
-    </div>
-	<div class="form-group">
-      <label for="pwd">Confirm Password:</label>
-      <input type="password" style="width:50%" class="form-control" id="pwd" placeholder="Confirm password">
-    </div>
-	<form action="bday">
-     <h5><b>Birthday:</b></h5>
-    <input type="date" name="bday">
-    </form>
-	<br/>
-	<div class="radio">
-	   <h5><b>I am a:</b></h5>
-      <label><input type="radio" name="gender" value="male">Male<br/></label>
-	  <br/>
-      <label><input type="radio" name="gender" value="female">Female</br></label>
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" class="required">I agree with the terms and conditions.</label>
-    </div>
-    <button type="submit" class="btn btn-success">Create account</button>
-	<br/>
-	<br/>
-  </form>
-</div>
+	
+	
+	<section id="content">
+			<c:url var="addAction" value="adduser"></c:url>
+			<form:form action="${addAction}" modelAttribute="user"
+				method="post">
+				
+				<h4 >Registration</h1>
+				
+				
+				<div>
+				
+					 <form:input path="username" type="text" placeholder="Username"
+					pattern=".{5,10}" required="true" id="username" name="username"
+					title="minimum length for username is 5" />
+				</div>
+				<br>
+				<div>
+				
+					<form:input path="password" type="password" placeholder="Password" pattern=".{3,8}"
+						required="true" id="password" name="password" title="minimum length for passsword is 3" />
+				</div>
+				<br>
+				<div>
+				
+					<form:input path="email" type="email" placeholder="Email"
+						required="true" id="username" name="username" />
+				</div>
+				<br>
+
+				<div>
+				
+					<form:input path="mobile" type="text" placeholder="Mobile"
+						pattern="^[789]\d{9}$" required="true" id="username"
+						name="username" title="Enter valid mobile number" />
+				</div>
+				<br>
+				<div>
+					<input type="submit" value="Register" /><a href="Login">Sign In</a>
+				</div>
+
+			</form:form>
+			
+		</section>
+		
+	</div>
+	
 </body>
 </html>
-
-
- --%>

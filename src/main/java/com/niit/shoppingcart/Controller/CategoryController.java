@@ -1,5 +1,7 @@
 package com.niit.shoppingcart.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,17 +10,29 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.google.gson.Gson;
 import com.niit.shoppingcart.DAO.CategoryDAO;
 import com.niit.shoppingcart.Model.Category;
+import com.niit.shoppingcart.Model.Supplier;
 
 @Controller
 public class CategoryController {
 	
 	@Autowired
 	CategoryDAO categoryDAO;
+	
+	@RequestMapping(value = "/categorygson" )
+	@ResponseBody
+	public String CategoryGson() {
+		List<Category> list = categoryDAO.list();
+		Gson gson = new Gson();
+		String data = gson.toJson(list);
+		return data;
+	}
 	
 	@RequestMapping(value="/Category",method = RequestMethod.GET)
 	public ModelAndView landPage(@ModelAttribute("category")Category category,BindingResult result,Model model)
@@ -51,14 +65,14 @@ public class CategoryController {
 		  return "redirect:/Category";
 		  
 		 }
-		 @RequestMapping(value="/ItemBycategory/{id}")
+		 @RequestMapping(value="/EditByCategory/{id}")
 		 public String editItem(@PathVariable("id") int id,RedirectAttributes redirectAttributes)
 		 {
 		  redirectAttributes.addFlashAttribute("category", this.categoryDAO.get(id));
 		  return "redirect:/Category";
 		  
 		}
-		 @RequestMapping(value="/deleteBycategory/{id}")
+		 @RequestMapping(value="/DeleteByCategory/{id}")
 		 public String deleteItem(@PathVariable("id") int id,Category category)
 		 {
 		  categoryDAO.delete(category);

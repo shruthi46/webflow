@@ -4,20 +4,20 @@ package com.niit.shoppingcart.Model;
 public class UserDetails 
 {
 
-	private String id;
+	private int id;
 	private String password;
 	private String name;
 	private String email;
 	private String address;
-	private String mobile;
+	private int mobile;
 	private String role;
 
 	private byte admin;
 		
-		public String getId() {
+		public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getPassword() {
@@ -44,10 +44,10 @@ public class UserDetails
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getMobile() {
+	public int getMobile() {
 		return mobile;
 	}
-	public void setMobile(String mobile) {
+	public void setMobile(int mobile) {
 		this.mobile = mobile;
 	}
 	public String getRole() {
