@@ -53,7 +53,7 @@ public class ProductController {
 		@RequestMapping(value="/Product",method = RequestMethod.GET)
 		public ModelAndView landPage(@ModelAttribute("product")Product product,BindingResult result,Model model)
 		{
-			ModelAndView mv=new ModelAndView("/admin");
+			ModelAndView mv=new ModelAndView("/Product");
 			mv.addObject("userclickedproduct", "true");
 			mv.addObject("allProduct",productDAO.list());
 			mv.addObject("allCategory",categoryDAO.list());

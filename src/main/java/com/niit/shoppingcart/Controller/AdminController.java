@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AdminController {
 @RequestMapping(value="/")
 public String init(Model model){
-	model.addAttribute("msg","Welcome shruthi");
+	model.addAttribute("msg","Welcome Admin");
 	return "admin";
 }
 	

@@ -38,7 +38,7 @@ public class SupplierController {
 	@RequestMapping(value="/Supplier", method = RequestMethod.GET)
 	public ModelAndView landPage(@ModelAttribute("supplier")Supplier supplier,BindingResult result,Model model)
 	{
-		ModelAndView mv= new ModelAndView("/admin");
+		ModelAndView mv= new ModelAndView("/Supplier");
 		mv.addObject("userclickedsupplier", "true");
 		mv.addObject("allData",supplierDAO.list());
 		return mv;
