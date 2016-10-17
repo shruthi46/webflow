@@ -37,13 +37,13 @@ tr:hover {
 }
 
 th {
-	background-color: blue;
+	background-color: black;
 	color: white;
 }
 
 body {
 	background-image:
-		url("http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=1769775 ");
+		url("http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/white-background-1.jpg");
 	background-repeat: no-repeat;
 	background-position: left bottom;
 }
@@ -66,7 +66,41 @@ body {
 	};
 </script>
 </head>
- <body background="http://www.solanoaidscoalition.org/blog/wp-content/uploads/2014/11/Paper-Grunge-Background-11.jpg">
+
+		<body background="http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/white-background-1.jpg">
+
+
+ <div class="text-center" >
+  <h1 style="font-family:Georgia; font-size:40px;"><i>DigiCart </i>
+    <img  src=" https://www.sitewelder.com/art2012/logo-big-shopping.png" alt="logo" width="60px" height="60px" align="center" >
+  <img  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/768px-F_icon.svg.png" alt="fb" width="30px" height="30px" align="right" >
+  <img  src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012.svg/1259px-Twitter_bird_logo_2012.svg.png" alt="twitter" width="30px" height="30px" align="right" >
+  <img  src="http://icons.iconarchive.com/icons/danleech/simple/1024/linkedin-icon.png" alt="linkedin" width="30px" height="30px" align="right" >
+  </h1>
+  
+  </div>
+  
+   <nav class="navbar navbar-inverse">
+   <div class="container-fluid">
+  
+     <ul class="nav navbar-nav navbar-right">
+	<li><a href="Home.jsp"> HOME</a></li>
+				<sec:authorize access="isAuthenticated()">
+	<li><a href="<c:url value="/perform_logout" />">Logout</a></li>
+	<li><a href="">Welcome  <sec:authentication property="principal.username"/></a>align="left"</li>
+</sec:authorize>
+					<li><a href="#"> ABOUT US</a></li>
+					<li><a href="#"> CONTACT US</a></li>
+					<sec:authorize access="!isAuthenticated()">
+<li><a href="register">Sign Up</a>
+			<li><a href="login" >Login</a></li>
+				
+					</sec:authorize>
+				</ul>
+				</div>
+				
+		   
+      </nav>
 
 
 	<c:url var="addAction" value="addProduct"></c:url>
@@ -74,9 +108,10 @@ body {
 		enctype="multipart/form-data">
 		<h3>
 			<c:if test="$(product.id==0}"> 
-		       Add New Item
+		       
 	            </c:if>
 			<c:if test="${!empty product.id}">
+			Add New Item
 		       Update Item for Id: <c:out value="${product.id}" />
 				<form:hidden path="id" />
 			</c:if>
@@ -215,8 +250,8 @@ body {
 						<td>{{product.id}}</td>
 						<td>{{product.name}}</td>
 						<td>{{product.description}}</td>
-						<td>{{product.categoryid}}</td>
-						<td>{{product.supplierid}}</td>
+						<td>{{product.category_id}}</td>
+						<td>{{product.supplier_id}}</td>
 						<td>{{product.price}}</td>
 
 						<td><div class="thumbnail">

@@ -1,16 +1,24 @@
 package com.niit.shoppingcart.DAO;
 
 import java.util.List;
-import com.niit.shoppingcart.Model.*;
+
+import com.niit.shoppingcart.Model.User;
+
 
 
 public interface UserDAO {
-	
-	public List<UserDetails> list();
-	public UserDetails get(String id);
-	 public void saveorupdate(UserDetails userDetails);
-	 public void delete(String id);
-	 public UserDetails isValidUser(String id,String passworrd);
-	 
 
+
+	public List<User> list();
+
+	public User get(int id);
+
+	public boolean saveOrUpdate(User user);
+	
+	
+	public void delete(int id);
+	
+	
+
+	public User get(String username);
 }

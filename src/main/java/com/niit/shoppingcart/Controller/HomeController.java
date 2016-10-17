@@ -21,7 +21,7 @@ public class HomeController {
 	 CategoryDAO categoryDAO;
 	    
 	 
-	@RequestMapping(value={"/Home"})
+	@RequestMapping(value={"/"})
 	public String homepage(Model m){
 	 m.addAttribute("userclickedhome", "true");
 	 m.addAttribute("product",new Product());
@@ -35,6 +35,12 @@ public class HomeController {
 	m.addAttribute("Clickedshowproduct", "true");
 	 m.addAttribute("IndividualProduct", productDAO.getproduct(id));
 	 return "ShowProduct";
+	}
+	@RequestMapping(value="login")
+	public String login(Model m){
+		m.addAttribute("UserClickedlogin", "true");
+		return "login";
+		
 	}
 
 }

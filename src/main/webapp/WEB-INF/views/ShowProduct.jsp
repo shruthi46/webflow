@@ -10,18 +10,21 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+<%-- <c:choose>
+	<c:when test="${Clickedshowproduct}">
+	<c:import url="/WEB-INF/view/ShowProduct.jsp"></c:import>
+	</c:when>
+</c:choose> --%>
 <c:forEach items="${IndividualProduct}" var="product">
 			<div class="col-xs-3 ">
 				<div class="img"><a href="IndividualItem/${product.id}"></a>
 
 <h1><c:out value="${product.name }"/></h1>
-<<%-- div class="thumbnail">
-<img height="300px" width="300px" alt="ShowProduct/${product.id }"
-				src="<c:url value="/resources/images/Product${product.id }.jpg"></c:url>">
-		</div> --%>
-		 <class="thumbnail"> <img height="200px"
-       width="200px" alt="${product.id }"
-       src="<c:url value="/resources/images/Product/${product.id }.jpg"></c:url>"></a>
+<div class="thumbnail">
+<img height="300px" width="300px" alt="${product.id }"
+				src="<c:url value="/resources/images/product/${product.id }.jpg"></c:url>">
+		</div>
 		<div align="right">
 		<c:out value="${product.description}"/><br>
 						<c:out value="${product.price }"/><br>

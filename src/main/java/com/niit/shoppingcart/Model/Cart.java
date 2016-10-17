@@ -1,6 +1,5 @@
-/*package com.niit.shoppingcart.Model;
+package com.niit.shoppingcart.Model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,23 +11,23 @@ import org.springframework.stereotype.Component;
 @Table
 @Component
 public class Cart  {
+	
 	@Id
 	@GeneratedValue
-	
 	private int id;
 	private int productid;
 	private int userid;
+	private String productname;
+	private int quantity;
+	private double price;
+	private String status;
+	
 	public String getStatus() {
 		return status;
 	}
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	private String productname;
-	@Column(columnDefinition="int default 1")
-	private int quantity;
-	private double price;
-	private String status;
 	public int getId() {
 		return id;
 	}
@@ -56,8 +55,8 @@ public class Cart  {
 	public int getQuantity() {
 		return quantity;
 	}
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+	public int setQuantity(int quantity) {
+		 return this.quantity = quantity;
 	}
 	public double getPrice() {
 		return price;
@@ -66,41 +65,4 @@ public class Cart  {
 		this.price = price;
 	}
 }
-	private static final long serialVersionUID = 1L;
-
-	private String cardnumber;
-	private String date;
-	private String cvv;
-	private String method;
-	public String getCardnumber() {
-		return cardnumber;
-	}
-	public void setCardnumber(String cardnumber) {
-		this.cardnumber = cardnumber;
-	}
-	public String getDate() {
-		return date;
-	}
-	public void setDate(String date) {
-		this.date = date;
-	}
-	public String getCvv() {
-		return cvv;
-	}
-	public void setCvv(String cvv) {
-		this.cvv = cvv;
-	}
-	public String getMethod() {
-		return method;
-	}
-	public void setMethod(String method) {
-		this.method = method;
-	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-	public String toCart(){
-		return "Cart [username= " + cardnumber + "]";
-	}
-
-}*/
+	

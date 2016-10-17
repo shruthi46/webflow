@@ -27,10 +27,10 @@ th, td {
     border-bottom: 1px solid #ddd;
 }
 tr:hover{background-color:#f5f5f5}
- th {background-color: blue;
+ th {background-color: black;
     color: white;
     }
-    body{background-image:url("http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=1769775 ");
+    body{background-image:url("http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/white-background-1.jpg");
     background-repeat: no-repeat;
     background-position: left bottom;} 
     
