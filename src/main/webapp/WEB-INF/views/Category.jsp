@@ -1,5 +1,8 @@
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -53,16 +56,50 @@ tr:hover{background-color:#f5f5f5}
 	};
 </script> 
 </head>
-<body>
+<body background="http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/white-background-1.jpg">
 
+
+ <div class="text-center" >
+  <h1 style="font-family:Georgia; font-size:40px;"><i>DigiCart </i>
+    <img  src=" https://www.sitewelder.com/art2012/logo-big-shopping.png" alt="logo" width="60px" height="60px" align="center" >
+  <img  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/768px-F_icon.svg.png" alt="fb" width="30px" height="30px" align="right" >
+  <img  src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012.svg/1259px-Twitter_bird_logo_2012.svg.png" alt="twitter" width="30px" height="30px" align="right" >
+  <img  src="http://icons.iconarchive.com/icons/danleech/simple/1024/linkedin-icon.png" alt="linkedin" width="30px" height="30px" align="right" >
+  </h1>
+  
+  </div>
+ <nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav navbar-right" >
+				
+				<sec:authorize access="isAuthenticated()">
+				<li><a href="">Welcome <sec:authentication
+								property="principal.username" /></a></li>
+					<li><a href="<c:url value="/perform_logout" />">LOGOUT</a></li>
+					
+				</sec:authorize>
+				<li><a href="Home"> HOME</a></li>
+				<li><a href="ABOUTUS"> ABOUT US</a></li>
+				<li><a href="CONTACTUS"> CONTACT US</a></li>
+				<sec:authorize access="!isAuthenticated()">
+					<li><a href="login">LOGIN</a></li>
+
+				</sec:authorize>
+			</ul>
+		</div>
+
+
+	</nav>
+ 
   
 <c:url var="addAction" value="addcategory" ></c:url>
 <form:form action="${addAction}" modelAttribute="category" name="btn-add">
    <h3>
                     <c:if test="$(category.id==0}">
-		       Add New Item
+		       
 	            </c:if>
 	            <c:if test="${!empty category.id}">
+	            Add New Item
 		      Update Item for Id: <c:out value="${category.id}"/>
 		      <form:hidden path="id"/>
 	            </c:if>

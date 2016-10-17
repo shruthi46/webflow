@@ -36,11 +36,6 @@ public class HomeController {
 	 m.addAttribute("IndividualProduct", productDAO.getproduct(id));
 	 return "ShowProduct";
 	}
-	@RequestMapping(value="login")
-	public String login(Model m){
-		m.addAttribute("UserClickedlogin", "true");
-		return "login";
-		
-	}
+
 
 }

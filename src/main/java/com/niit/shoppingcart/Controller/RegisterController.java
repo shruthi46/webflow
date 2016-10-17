@@ -2,6 +2,7 @@ package com.niit.shoppingcart.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -36,5 +37,25 @@ public class RegisterController {
 		mv.addObject("UserClickeduser","true");
 		mv.addObject("Hideothers","true");
 		return mv;
+	}
+	
+	
+	@RequestMapping(value = "CONTACTUS")
+	public String Displaycontact(Model mv) {
+		mv.addAttribute("UserClickedContactUs", "true");
+		return "CONTACTUS";
+	}
+	
+	@RequestMapping(value = "ABOUTUS")
+	public String Displayabout(Model mv) {
+		mv.addAttribute("UserClickedAboutus", "true");
+		return "ABOUTUS";
+	}
+	
+	@RequestMapping(value="login")
+	public String login(Model m){
+		m.addAttribute("UserClickedlogin", "true");
+		return "login";
+		
 	}
 }

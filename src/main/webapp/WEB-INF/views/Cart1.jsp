@@ -49,27 +49,7 @@ margin-top:50px;
 <h1>Your Cart</h1>
 <div class="panel-body">
 
-       <!-- <div class="row">
-        <div class="col-xs-5">
-         <label class="form-control input-sm">Product Details</label>
-        </div>
-        
-        <div class="col-xs-2 text-right">
-         <label class="form-control input-sm"> Total Price</label>
-        </div>
-        <div class="col-xs-4">
-         <div class="col-xs-6">
-          <label class="form-control input-sm">Quantity</label>
-         </div>
-         <div class="col-xs-6">
-          <label class="form-control input-sm">Update</label>
-         </div>
-        </div>
-        <div class="col-xs-1">
-         <a href="#" class="form-control input-sm"><span
-          class="glyphicon glyphicon-trash"> </span></a>
-        </div>
-       </div> -->
+      
        
 <table>
 <tr>
@@ -107,18 +87,7 @@ margin-top:50px;
            <label class="form-control input-sm">${cart.quantity}</label>
           </div>
 
-          <%-- <div class="col-xs-4" style="padding-top: 22px">
-           <form action="edit/${cart.id}">
-            <div class="col-xs-6">
-             <input type="text" class="form-control input-sm"
-              value="${cart.quantity}" name="quantity">
-            </div>
-            <div class="col-xs-6"  >
-             <button type="submit"
-              class="btn btn-default btn-sm btn-block">Edit cart</button>
-            </div>
-            </form>
-          </div> --%>
+         
           <div class="col-xs-2" style="padding-top: 22px">
            <a href="delete/${cart.id}" class="form-control input-sm">Delete</a>
           </div>
@@ -129,7 +98,7 @@ margin-top:50px;
          <div class="panel-footer">
        <div class="row text-center">
         <div class="col-xs-3">
-         <a href="HOME" class="btn btn-primary btn-sm btn-block">Continue Shopping</a>
+         <a href="Home" class="btn btn-primary btn-sm btn-block">Continue Shopping</a>
         </div>
         <c:if test="${empty EmptyCart}">
         <div class="col-xs-6">

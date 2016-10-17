@@ -52,7 +52,7 @@ width:100%;
 	  <li><a href="ABOUTUS">ABOUT US</a></li>
 	  <li><a href="CONTACTUS">CONTACT US</a></li>
    <sec:authorize access="isAuthenticated()">
-   <li ><a href="Cart" ><p>CART <span class="glyphicon glyphicon-shopping-cart"></span></p></a></li>
+   <li ><a href="Cart1" ><p>CART <span class="glyphicon glyphicon-shopping-cart"></span></p></a></li>
 	<li><a href="<c:url value="/perform_logout" />"><p>LOGOUT<span class="glyphicon glyphicon-log-out"></span></p></a></li>
 	<li><a href="">WELCOME<sec:authentication property="principal.username"/></a></li>
 </sec:authorize>

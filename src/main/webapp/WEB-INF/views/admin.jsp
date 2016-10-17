@@ -49,7 +49,7 @@ width:100%;
      <ul class="nav navbar-nav navbar-right" style="margin-bottom:0px;">
       
       <li><a href="admin">HOME</a></li>
-      <li><a href="regsiter">sign up</a></li>
+      <!-- <li><a href="regsiter">SIGN UP</a></li> -->
       <!-- <li><a href="LOGIN">LOGIN</a></li> -->
 	  <li><a href="ABOUTUS">ABOUT US</a></li>
 	  <li><a href="CONTACTUS">CONTACT US</a></li>

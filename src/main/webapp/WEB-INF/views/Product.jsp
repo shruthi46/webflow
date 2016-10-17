@@ -1,6 +1,9 @@
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -67,49 +70,56 @@ body {
 </script>
 </head>
 
-		<body background="http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/white-background-1.jpg">
+<body
+	background="http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/white-background-1.jpg">
 
 
- <div class="text-center" >
-  <h1 style="font-family:Georgia; font-size:40px;"><i>DigiCart </i>
-    <img  src=" https://www.sitewelder.com/art2012/logo-big-shopping.png" alt="logo" width="60px" height="60px" align="center" >
-  <img  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/768px-F_icon.svg.png" alt="fb" width="30px" height="30px" align="right" >
-  <img  src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012.svg/1259px-Twitter_bird_logo_2012.svg.png" alt="twitter" width="30px" height="30px" align="right" >
-  <img  src="http://icons.iconarchive.com/icons/danleech/simple/1024/linkedin-icon.png" alt="linkedin" width="30px" height="30px" align="right" >
-  </h1>
-  
-  </div>
-  
-   <nav class="navbar navbar-inverse">
-   <div class="container-fluid">
-  
-     <ul class="nav navbar-nav navbar-right">
-	<li><a href="Home.jsp"> HOME</a></li>
+	<div class="text-center">
+		<h1 style="font-family: Georgia; font-size: 40px;">
+			<i>DigiCart </i> <img
+				src=" https://www.sitewelder.com/art2012/logo-big-shopping.png"
+				alt="logo" width="60px" height="60px" align="center"> <img
+				src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/768px-F_icon.svg.png"
+				alt="fb" width="30px" height="30px" align="right"> <img
+				src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012.svg/1259px-Twitter_bird_logo_2012.svg.png"
+				alt="twitter" width="30px" height="30px" align="right"> <img
+				src="http://icons.iconarchive.com/icons/danleech/simple/1024/linkedin-icon.png"
+				alt="linkedin" width="30px" height="30px" align="right">
+		</h1>
+
+	</div>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav navbar-right">
+				
 				<sec:authorize access="isAuthenticated()">
-	<li><a href="<c:url value="/perform_logout" />">Logout</a></li>
-	<li><a href="">Welcome  <sec:authentication property="principal.username"/></a>align="left"</li>
-</sec:authorize>
-					<li><a href="#"> ABOUT US</a></li>
-					<li><a href="#"> CONTACT US</a></li>
-					<sec:authorize access="!isAuthenticated()">
-<li><a href="register">Sign Up</a>
-			<li><a href="login" >Login</a></li>
-				
-					</sec:authorize>
-				</ul>
-				</div>
-				
-		   
-      </nav>
+				<li><a href="">Welcome <sec:authentication
+								property="principal.username" /></a></li>
+					<li><a href="<c:url value="/perform_logout" />">LOGOUT</a></li>
+					
+				</sec:authorize>
+				<li><a href="Home"> HOME</a></li>
+				<li><a href="ABOUTUS"> ABOUT US</a></li>
+				<li><a href="CONTACTUS"> CONTACT US</a></li>
+				<sec:authorize access="!isAuthenticated()">
+					<li><a href="login">LOGIN</a></li>
+
+				</sec:authorize>
+			</ul>
+		</div>
+
+
+	</nav>
 
 
 	<c:url var="addAction" value="addProduct"></c:url>
 	<form:form action="${addAction}" modelAttribute="product" id="btn-add"
 		enctype="multipart/form-data">
 		<h3>
-			<c:if test="$(product.id==0}"> 
-		       
-	            </c:if>
+			<c:if test="$(product.id==0}">
+
+			</c:if>
 			<c:if test="${!empty product.id}">
 			Add New Item
 		       Update Item for Id: <c:out value="${product.id}" />
@@ -218,7 +228,7 @@ body {
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="container" data-ng-app="myApp"
 			data-ng-controller="MyController" data-ng-init="getDataFromServer()"
 			style="overflow: auto; height: 400px; width: 70%">
@@ -258,15 +268,14 @@ body {
 								<img height="100px" width="100px" alt="{{product.id }}"
 									src="<c:url value="/resources/images/Product/{{product.id}}.jpg"></c:url>">
 							</div>
-						<td><a href="DeleteByProduct/{{product.id}}">Delete </a> |
-						 <a href="EditByProduct/{{product.id}}">Edit</a>
-</td>
+						<td><a href="DeleteByProduct/{{product.id}}">Delete </a> | <a
+							href="EditByProduct/{{product.id}}">Edit</a></td>
 					</tr>
 					<%--  </c:forEach> --%>
 				</table>
 			</div>
-			</div>
-			
+		</div>
+
 	</form:form>
 </body>
 </html>
