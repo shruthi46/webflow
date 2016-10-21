@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.niit</groupId>
-	<artifactId>shoppingcart</artifactId>
+	<artifactId>shoppingcart1</artifactId>
       <packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>shoppingcart Maven Webapp</name>
+	<name>shoppingcart1 Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 	
@@ -162,12 +162,19 @@
     <artifactId>gson</artifactId>
     <version>2.6.2</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/org.springframework.webflow/spring-webflow -->
+<dependency>
+    <groupId>org.springframework.webflow</groupId>
+    <artifactId>spring-webflow</artifactId>
+    <version>2.4.4.RELEASE</version>
+</dependency>
+
 		
 
 
 
 	</dependencies>
 	<build>
-		<finalName>shoppingcart</finalName>
+		<finalName>shoppingcart1</finalName>
 	</build>
 </project>

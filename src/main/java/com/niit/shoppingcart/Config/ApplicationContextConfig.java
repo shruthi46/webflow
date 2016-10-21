@@ -58,7 +58,7 @@ public class ApplicationContextConfig {
 			sessionBuilder.addAnnotatedClasses(Supplier.class);
 			sessionBuilder.addAnnotatedClasses(User.class);
 			sessionBuilder.addAnnotatedClasses(Cart.class);
-			
+			sessionBuilder.addAnnotatedClasses(Checkout.class);
 			
 			System.out.println("Session");
 			
@@ -103,6 +103,11 @@ public class ApplicationContextConfig {
 		@Bean(name = "cartDAO")
 		public CartDAO getCartDAO(SessionFactory sessionFactory) {
 				return new CartDAOImpl(sessionFactory);
+		}
+		@Autowired
+		@Bean(name = "checkoutDAO")
+		public CheckoutDAO getCheckoutDAO(SessionFactory sessionFactory) {
+				return new CheckoutDAOImpl(sessionFactory);
 		}
 		
 		

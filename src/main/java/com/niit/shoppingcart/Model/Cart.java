@@ -1,5 +1,7 @@
 package com.niit.shoppingcart.Model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,7 +12,8 @@ import org.springframework.stereotype.Component;
 @Entity
 @Table
 @Component
-public class Cart  {
+public class Cart implements Serializable
+{
 	
 	@Id
 	@GeneratedValue
@@ -21,7 +24,43 @@ public class Cart  {
 	private int quantity;
 	private double price;
 	private String status;
+	private String cardnumber;
+	private String cvv;
+	private String method;
+	private String name;
+	private String date;
 	
+	
+	public String getCardnumber() {
+		return cardnumber;
+	}
+	public void setCardnumber(String cardnumber) {
+		this.cardnumber = cardnumber;
+	}
+	public String getCvv() {
+		return cvv;
+	}
+	public void setCvv(String cvv) {
+		this.cvv = cvv;
+	}
+	public String getMethod() {
+		return method;
+	}
+	public void setMethod(String method) {
+		this.method = method;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
 	public String getStatus() {
 		return status;
 	}

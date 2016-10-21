@@ -26,6 +26,7 @@ http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="maxUploadSize" value="10000000000" />
 	</bean>
+	<import resource="webflow-config.xml" />
    
 
 </beans>

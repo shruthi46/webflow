@@ -87,7 +87,7 @@ width:100%;
 </c:choose>
 <c:choose>
 <c:when test="${userclickedhome}">
-<c:import url="/WEB-INF/views/HOME.jsp"/>
+<c:import url="/WEB-INF/views/Home.jsp"/>
 </c:when>
 </c:choose>
    
